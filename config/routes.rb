@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   post 'add_to_cart' => 'cart#add_to_cart'
 
+  post 'delete_from_cart' => 'cart#delete_from_cart'
+
   get 'view_order' => 'cart#view_order'
 
   get 'checkout' => 'cart#checkout'

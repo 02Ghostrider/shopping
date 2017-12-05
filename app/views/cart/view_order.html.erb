@@ -1,15 +1,30 @@
 <h2>My Cart</h2>
 
 <div>
-  <% @line_items.each do |line_item| %>
-    <li><%= line_item.product.name %></li>
-    <li><%= number_to_currency line_item.product.price %></li>
-    <li>Qty: <%= line_item.quantity %></li>
-    <li>Subtotal: <%= number_to_currency line_item.line_item_total %></li>
-  <% end %>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Product</th>
+				<th>Unit Price</th>
+				<th>Quantity</th>
+			</tr>
+		</thead>
+		<tbody>
+		  <% @line_items.each do |line_item| %>
+		  	<tr>
+	    		<td><%= line_item.product.name %></td>
+	    		<td><%= number_to_currency line_item.product.price %></td>
+	    		<td><%= line_item.quantity %></td>
+	    		<td>Subtotal: <%= number_to_currency line_item.line_item_total %></td>
+	    		<td><%= link_to 'Delete item', delete_from_cart_path(line_item_id: line_item.id), method: :post, class: "btn btn-danger", data: {confirm: "Really don't want this?"} %></td>
+	    	</tr>
+  		<% end %>
+  	</tbody>
+  </table>
 </div>
 
 <div>
   <%= link_to "Proceed to Checkout?", checkout_path, class: "btn btn-success" %>
+  <%= link_to "Continue shopping", root_path, class: "btn btn-primary" %>
 </div>
 
