@@ -5,6 +5,9 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'stripe'
+gem 'figaro'
+gem 'certified'
 gem 'awesome_print', require:"ap"
 gem 'bootstrap-sass'
 gem 'better_errors'

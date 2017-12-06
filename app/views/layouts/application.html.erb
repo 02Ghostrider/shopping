@@ -10,6 +10,14 @@
 
   <body>
     <%= render 'layouts/navBar' %>
+    <div id="flash">
+      <% flash.each do |type, message| %>
+        <div class="alert <%= bootstrap_class_for(type) %> fade-in">
+          <button class="close" data-dismiss="alert">X</button>
+          <%= message %>
+        </div>
+      <% end %>
+    </div>
   	<div class="container">
 	    <%= yield %>
   	</div>
