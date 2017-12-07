@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'your_orders' => 'orders#your_orders'
+
   post 'add_to_cart' => 'cart#add_to_cart'
 
   post 'delete_from_cart' => 'cart#delete_from_cart'
@@ -17,6 +19,8 @@ Rails.application.routes.draw do
   get 'branding' => 'storefront#items_by_brand'
 
   post 'order_complete' => 'cart#order_complete'
+
+  post 'cancel_checkout' => 'cart#cancel_checkout'
 
   resources :categories
   resources :products

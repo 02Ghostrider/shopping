@@ -1,5 +1,14 @@
 <h2>Thank you for your order!</h2>
 
 <h4>
-	<p><strong>Order #<%= @order.id %> will be shipped to you, <%= @order.user.email %>, eventually...</strong></p>
+	<p><strong>Order #<%= @order.id %> will be shipped to you, <%= @order.user.name %>, eventually...</strong></p>
+
+<h2>Now that I have all your money, mwhaaa haaaa haaaaaa...!!</h2>
+
+<p><strong>Customer:</strong></p>
+<p><%= @order.user.name %></p>
+<p><%= @order.user.address %> </p>
+<p><%= @order.user.state %>  <%= @order.user.zip %></p>
+<p><%= @order.user.email %></p>
+<p><%= @order.user.birthday %></p>
 </h4>

@@ -16,7 +16,7 @@
 	    		<td><%= number_to_currency line_item.product.price %></td>
 	    		<td><%= line_item.quantity %></td>
 	    		<td>Subtotal: <%= number_to_currency line_item.line_item_total %></td>
-	    		<td><%= link_to 'Delete item', delete_from_cart_path(line_item_id: line_item.id), method: :post, class: "btn btn-danger", data: {confirm: "Really don't want this?"} %></td>
+	    		<td><%= link_to 'Put it Back', delete_from_cart_path(line_item_id: line_item.id), method: :post, class: "btn btn-danger", data: {confirm: "Really don't want this?"} %></td>
 	    	</tr>
   		<% end %>
   	</tbody>
@@ -24,7 +24,7 @@
 </div>
 
 <div>
-  <%= link_to "Proceed to Checkout?", checkout_path, class: "btn btn-success" %>
-  <%= link_to "Continue shopping", root_path, class: "btn btn-primary" %>
+  <%= link_to "Finished Shopping", checkout_path, class: "btn btn-success" %>
+  <%= link_to "More Stuff", root_path, class: "btn btn-primary" %>
 </div>
 
